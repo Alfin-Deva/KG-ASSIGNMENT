@@ -1,0 +1,72 @@
+<app-header></app-header>
+<body>
+
+<section class="container py-4">
+    <div class="row">
+        <div class="col-md-12">
+            <ul id="tabs" class="nav nav-tabs">
+                <li class="nav-item box"><a href="" data-target="#home1" data-toggle="tab"
+                        class="nav-link small active"><span class="count">06</span><br>Queue</a></li>
+                <li class="nav-item box"><a href="" data-target="#profile1" data-toggle="tab"
+                        class="nav-link small"><span class="count">02</span><br>Earlier</a></li>
+                <li class="nav-item box"><a href="" data-target="#messages1" data-toggle="tab"
+                        class="nav-link small"><span class="count">05</span><br>Wait List</a></li>
+                <li class="nav-item box"><a href="" data-target="#none1" data-toggle="tab"
+                          class="nav-link small"><span class="count">0</span><br>No show</a></li>
+            </ul>
+          <div style="background-color:white;">
+              <div id="tabsContent" class="tab-content" style="padding-top: 20px;padding:20px;">
+                <div id="home1" class="tab-pane fade active show">
+                    <table class="table table-hover">
+                        <thead class="no-border">
+                          <tr>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col">PATIENT</th>
+                            <th scope="col">CONTACT</th>
+                            <th scope="col">APPOINMENT</th>
+                            <th scope="col">WAITED</th>
+                            <th></th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody class="table-bordered">
+                          <tr *ngFor="let patient of patientsDetails;let i=index;">
+                            <td><i class="fa fa-ellipsis-v font-md"></i>&nbsp;<i class="fa fa-ellipsis-v font-md"></i></td>
+                            <td scope="row"><span class="bg-sno">{{i+1}}</span></td>
+                            <td>
+                              <div class="row">
+                              <div class="col-sm-2">
+                                <img src="https://randomuser.me/api/portraits/thumb/men/75.jpg" class="img-class"> &nbsp;&nbsp;
+                              </div> 
+                              <div class="col-sm-10">
+                               <h6 class="font-name">{{patient.name}}</h6> 
+                               <small class="font-md">{{patient.gender}},{{patient.age}} yr</small>
+                              </div>
+                            </div>
+                             </td>
+                            <td class="font-md">{{patient.mobile}}</td>
+                            <td class="font-md">{{patient.appoinment}} PM</td>
+                            <td class="font-md"><p class="bg-wait">{{patient.waited}}</p></td>
+                            <td class="font-md"><buttton class="btn btn-sm btn-primary button-style">{{patient.status}}</buttton></td>
+                            <td><i class="fa fa-ellipsis-h font-md"></i></td>
+
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+                <div id="profile1" class="tab-pane fade">
+                    <p>This is Earlier List!</p>
+                </div>
+                <div id="messages1" class="tab-pane fade">
+                    <p>This is Waiting List!</p>
+                </div>
+                <div id="none1" class="tab-pane fade">
+                  <p>This is None List!</p>
+              </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>

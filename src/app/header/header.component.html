@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <!-- <a class="navbar-brand" href="#" style="width:100px">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+    <div class="flex-row d-flex">
+        <button type="button" class="navbar-toggler mr-2 " data-toggle="offcanvas" title="Toggle responsive left sidebar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#" title="Free Bootstrap 4 Admin Template">Appoinment</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown" style="width:250px">
+            <div class="row">
+                <div class="col-sm-2">
+                    <img src="https://randomuser.me/api/portraits/thumb/men/75.jpg" class="img-class">
+                </div>
+                <div class="col-sm-6">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dr.Nishant Clinician<br>
+              <small>Kids Care Clinic</small>
+            </a>
+            <!-- <a class="nav-link dropdown-toggle" >Kids care clinic</a> -->
+        </div>
+        </div>
+          </li>
+        <li class="nav-item dropdown" style="width:180px">
+            <div class="row">
+                <!-- <img src="https://randomuser.me/api/portraits/thumb/men/75.jpg" class="img-class"> -->
+                <i class="fa fa-calendar" style="padding-top:10px;color:blue"></i>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Today <br>
+                  <small>{{date | date:'mediumDate'}}</small>
+                </a>
+            </div>
+        </li>
+       
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-primary my-2 my-sm-0 header-button" routerLink="/appoinments">Appoinments</button>&nbsp;&nbsp;&nbsp;&nbsp;       
+            <button class="btn btn-outline-primary my-2 my-sm-0 header-button">Walk-in</button>&nbsp;&nbsp; &nbsp;&nbsp;
+            <i class="fa fa-cog header-icon"></i>
+                 </form>
+    </div>
+  </nav>

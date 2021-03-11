@@ -1,0 +1,90 @@
+<div class="col-sm-12 row mt-3">
+<p routerLink="/home">Home / Appoinments</p>
+</div>
+
+<section class="container py-4">
+    <div class="row">
+            <div class="col-md-3">
+                <input type="date">
+            </div>
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                        <div class="col-sm-9">
+                            <h5>Morning</h5>
+                            <span>9.00 AM to 12.00 PM</span>
+                        </div>
+                        <div class="col-md-3">
+                           <small data-toggle="modal" data-target="#exampleModal">+ add slots</small>
+                           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Appoinment Time</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <form [formGroup]="timeslotForm">
+                                <div class="modal-body">
+                                    <div class="row">
+                                  <div class="col-sm-6">
+                                    From Time:  <input type="time" formControlName="fromTime" name="fromTime" min="09:00" max= "21:00">
+                                  </div>
+                                  <div class="col-sm-6">
+                                   To Time:  <input type="time" formControlName="toTime" name="toTime" min="09:00" max= "21:00" disabled>
+                                  </div>
+                                </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" (click)="addSlots()">Add Slot</button>
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                        <div class="row" style="padding-top: 30px;">
+                            <div class="col-sm-2"  *ngFor = 'let Response of mTimeSlot;let index=i'>
+                                <div class="form-check radio-style">
+                                    <label class="form-check-label">
+                                      <input type="radio" class="form-check-input" name="optradio">{{this.Response.fromTime}}
+                                    </label>
+                                  </div>
+                            </div>
+                           
+                            
+                        </div>
+                        
+                    </div>
+                    <hr>
+                    <div class="card-body">
+                        <div class="row">
+                        <div class="col-sm-9">
+                            <h5>Evening</h5>
+                            <span>5.00 PM to 9.00 PM</span>
+                        </div>
+                        <!-- <div class="col-md-3">
+                           <small>+ add slots</small>
+                        </div> -->
+                    </div>
+                        <div class="row" style="padding-top: 30px;">
+                            <div class="col-sm-2"  *ngFor = 'let Response of eTimeSlot;let index=i'>
+                                <div class="form-check radio-style">
+                                    <label class="form-check-label">
+                                      <input type="radio" class="form-check-input" name="optradio">{{this.Response.fromTime}}
+                                    </label>
+                                  </div>
+                            </div>
+                            
+                            
+                        </div>
+                        
+                    </div>
+                  </div>
+            </div>
+    </div>
+</section>
